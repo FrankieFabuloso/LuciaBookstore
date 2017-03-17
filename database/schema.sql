@@ -1,0 +1,24 @@
+DROP TABLE IF EXISTS book;
+CREATE TABLE IF NOT EXISTS book)
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(512),
+  description TEXT,
+  language VARCHAR(32),
+  image_url VARCHAR(512),
+  buy_link VARCHAR(512),
+  average_rating DECIMAL,
+  ratings_count INTEGER DEFAULT 0,
+  page_count INTEGER
+);
+
+DROP TABLE IF EXISTS author;
+CREATE TABLE IF NOT EXISTS author(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(256) NOT NULL UNIQUE
+);
+
+DROP TABLE IF EXISTS genres;
+CREATE TABLE IF NOT EXISTS genres(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(256) NOT NULL UNIQUE
+);
