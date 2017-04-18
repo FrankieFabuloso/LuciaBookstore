@@ -5,5 +5,5 @@ if ( fs.existsSync('.env') ) {
 }
 
 const connectionString = process.env.DATABASE_URL
-
+console.log('connectionString:', connectionString)
 export { connectionString }
