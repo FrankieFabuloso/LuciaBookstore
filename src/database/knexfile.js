@@ -1,5 +1,7 @@
 import { connectionString } from '../config/config'
 
+console.log('connectionString:', connectionString)
+
 module.exports = {
   client: 'pg',
   connection: connectionString,

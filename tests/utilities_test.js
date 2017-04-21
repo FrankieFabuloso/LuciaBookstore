@@ -52,7 +52,9 @@ describe('utilities', () => {
   describe('updateRecord()', () => {
     it('updates a given record', () => {
       return utilities.updateRecord( 'genre', 'name', 'horror', {name: 'scary'} )
-      .then( res => expect(res.name).to.equal('scary'))
+      .then( res => {
+        expect(res.name).to.equal('scary')
+      })
     })
   })
 
