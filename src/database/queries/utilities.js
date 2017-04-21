@@ -21,14 +21,13 @@ const findAll = table =>
     .select()
     .table( table )
 
-const updateRecord = ( table, column, data, attributes ) => {
+const updateRecord = ( table, column, data, attributes ) =>
   knex
     .table( table )
     .where( column, data )
     .update( attributes )
     .returning( '*' )
     .then( firstRecord )
-}
 
 const deleteRecord = ( table, column, data ) =>
   knex

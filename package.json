@@ -7,6 +7,9 @@
     "start": "nodemon ./lib/app.js",
     "test": "mocha --require babel-register ./tests/*.js",
     "build": "babel src -d lib",
+    "reset:db": "npm run drop:db && npm run create:db && npm run migrate",
+    "drop:db": "dropdb lucia-bookstore",
+    "create:db": "createdb lucia-bookstore",
     "migrate": "babel-node ./node_modules/.bin/knex --knexfile ./src/database/knexfile.js migrate:latest",
     "migrate:make": "babel-node ./node_modules/.bin/knex --knexfile ./src/database/knexfile.js migrate:make"
   },
@@ -22,8 +25,11 @@
   "homepage": "https://github.com/FrankieFabuloso/LuciaBookstore#readme",
   "dependencies": {
     "babel": "^6.23.0",
+    "body-parser": "^1.17.1",
     "chai": "^3.5.0",
+    "cookie-parser": "^1.4.3",
     "express": "^4.15.2",
+    "favicon": "0.0.2",
     "fs": "0.0.1-security",
     "knex": "^0.12.7",
     "mocha": "^3.2.0",
