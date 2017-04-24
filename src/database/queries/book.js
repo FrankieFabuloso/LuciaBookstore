@@ -1,28 +1,28 @@
-import * as utilities from 'utilities'
+const utilities = require( './utilities' )
 
-const getAllBooks = () =>
+const getAll = () =>
   utilities.findAll( 'book' )
 
-const createBook = ( data ) =>
+const create = ( data ) =>
   utilities.createRecord( 'book', data )
 
-const findBook = ( column, data ) =>
+const find = ( column, data ) =>
   utilities.findRecord( 'book', column, data )
 
-const updateBook = ( id, data ) =>
+const update = ( id, data ) =>
   utilities.updateRecord( 'book', 'id', id, data )
 
-const deleteBook = ( id ) =>
+const deleteIt = ( id ) =>
   utilities.deleteRecord( 'book', 'id', id )
 
-const truncateBookTable = () =>
+const truncateTable = () =>
   utilities.deleteAll( 'book' )
 
-export {
-  getAllBooks,
-  createBook,
-  findBook,
-  updateBook,
-  deleteBook,
-  truncateBookTable
+module.exports = {
+  getAll,
+  create,
+  find,
+  update,
+  deleteIt,
+  truncateTable
 }
