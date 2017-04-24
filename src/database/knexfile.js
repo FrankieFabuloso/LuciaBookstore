@@ -1,4 +1,4 @@
-import { connectionString } from '../config/config'
+const { connectionString } = require( '../config/config' )
 
 console.log('connectionString:', connectionString)
 

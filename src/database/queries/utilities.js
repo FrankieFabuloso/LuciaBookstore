@@ -1,4 +1,4 @@
-import knex from '../knex'
+const knex = require('../knex')
 
 const firstRecord = records => records[0]
 
@@ -38,7 +38,7 @@ const deleteRecord = ( table, column, data ) =>
 const deleteAll = table =>
   knex.raw( `DELETE FROM ${table}` )
 
-export {
+module.exports = {
   createRecord,
   findRecord,
   firstRecord,

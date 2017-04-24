@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  include header
+  .home-body-wrapper.wrapper
+    .home-body-content
+      .home-body-display--image
+        img(src="images/books.jpg")
+      .home-body-display--text
+        h1
+          | buy these books plz
+      .home-body-display--book-list
+        .book-container
+        each book in books
+          .book=book.title 
