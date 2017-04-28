@@ -1,0 +1,9 @@
+extends ../layout
+block stylesheet
+  link(rel='stylesheet' href="stylesheets/shop/style.css")
+  link(rel='stylesheet' href="stylesheets/utilities/book_list.css")
+block content
+  include shopbar
+  include ../header
+  .book-list-wrapper
+    include ../utility_mixins/book_list

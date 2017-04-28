@@ -1,6 +1,10 @@
 .book-container
   each book in books
     .book-description
-      .book--single-book=book.title 
-      button
-        | hi
+      .book-description--image
+        img( src=`${book.image_url}`)
+      .book-description--title=book.title
+      .book-description--title=book.price 
+      .book.book-description--button
+        button
+          | hi

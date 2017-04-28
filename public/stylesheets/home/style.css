@@ -10,7 +10,14 @@
   justify-content: center;
 }
 
- /*Image CSS */
-/*img {
-   max-width:80%;
-}*/
+.home-body-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-body-display--book-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
