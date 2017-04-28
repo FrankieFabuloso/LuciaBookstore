@@ -15,7 +15,7 @@ router.post( '/add', function( request, response) {
 
 
 
-  let new_book_info = Object.keys( book_info ).reduce( (memo, key) => {
+  const new_book_info = Object.keys( book_info ).reduce( (memo, key) => {
     if( book_info[ key ] !== '' ) {
       memo[ key ] = book_info[ key ]
     }
