@@ -1,18 +1,39 @@
 extends ../layout
-form
-  .row
-    .six.columns
-      label(for='exampleEmailInput') Your email
-      input#exampleEmailInput.u-full-width(type='email', placeholder='test@mailbox.com')
-    .six.columns
-      label(for='exampleRecipientInput') Reason for contacting
-      select#exampleRecipientInput.u-full-width
-        option(value='Option 1') Questions
-        option(value='Option 2') Admiration
-        option(value='Option 3') Can I get your number?
-  label(for='exampleMessage') Message
-  textarea#exampleMessage.u-full-width(placeholder='Hi Dave …')
-  label.example-send-yourself-copy
-    input(type='checkbox')
-    span.label-body Send a copy to yourself
-  input.button-primary(type='submit', value='Submit')
+block stylesheet
+  link(rel='stylesheet' href="stylesheets/admin/style.css")
+block content
+  include ../header
+  .add-book-message
+  
+  .add-book-container
+    .add-book-header
+      | Add A Book
+    form.add-book(action="/admin/add" method="post")
+      .add-book-row
+        .six.columns
+          label(for='bookTitle') Title
+          input#bookTitle.u-full-width(type='text' name='title')
+        .six.columns
+          label(for='bookAuthor') Authors
+          input#bookAuthor.u-full-width(type='text' name='author_name')
+            
+      .add-book-row
+        .six.columns
+          label(for='bookPrice') Price
+          input#bookPrice.u-full-width(type='number' min="0.01" step="0.01" name='price')
+        .six.columns
+          label(for='bookGenre') Genres
+          input#bookGenre.u-full-width(type='text' name='genre_name')
+            
+      .add-book-row
+        .six.columns
+          label(for='imageURL') Image
+          input#imageURL.u-full-width(type='text' name='image_url')
+        .six.columns
+          label(for='pageCount') Page Count
+          input#pageCount.u-full-width(type='number' name='page_count')
+            
+      label(for='bookDescription') Description
+      textarea#bookDescription.u-full-width(placeholder='What is this book about?' name='description')
+
+      input.button-primary(type='submit', value='Submit')

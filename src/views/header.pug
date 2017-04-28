@@ -1,15 +1,25 @@
 .header-container
-  .header-logo
-    | Lucias Bookstore
-  .header-navbar.navbar
-    .header-navbar-item
-      | Home
-    .header-navbar-item
-      | About
-    .header-navbar-item
-      | Shop
-    .header-navbar-item
-      | Contact
-    
-  .header-search-bar
-    | Search For Stuff
+  .navbar-logo-wrapper
+    .navbar-logo
+      h1 
+        | Lucia's Bookstore
+  .navbar-wrapper
+    ul.header-navbar.navbar
+      li.header-navbar-item
+        a.header-navbar-anchor(href='/')
+          | Home
+      li.header-navbar-item
+        a.header-navbar-anchor
+          | About
+      li.header-navbar-item
+        a.header-navbar-anchor(href='/shop')
+          | Shop
+      li.header-navbar-item
+        a.header-navbar-anchor
+          | Contact
+      
+      li.header-search-bar
+        form.search-input.input(action="/" method="get")
+          .columns.search-input
+            input#search-input--feild.u-full-width(type='text' name='title')
+            input.search-input--submit.button-primary(type='submit', value='Submit')

@@ -1,15 +1,16 @@
 extends layout
-
+block stylesheet
+  link(rel='stylesheet' href="stylesheets/home/style.css")
+  link(rel='stylesheet' href="stylesheets/utilities/book_list.css")
 block content
   include header
   .home-body-wrapper.wrapper
     .home-body-content
       .home-body-display--image
-        img(src="images/books.jpg")
+        img(src="images/kids-book.jpg")
+        //- img(src="images/books.jpg")
       .home-body-display--text
-        h1
-          | buy these books plz
+        h4
+          | CONOCE NUESTRA SELECCION / BROWSE OUR SELECTION
       .home-body-display--book-list
-        .book-container
-        each book in books
-          .book=book.title 
+        include ./utility_mixins/book_list
