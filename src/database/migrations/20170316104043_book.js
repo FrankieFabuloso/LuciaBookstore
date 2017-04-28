@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.string('title').notNullable();
     table.string('language').defaultTo('spanish');
     table.string('image_url');
-    table.string('buy_link');
+    table.text('description');
     table.integer('average_rating');
     table.integer('rate_count');
     table.integer('page_count');

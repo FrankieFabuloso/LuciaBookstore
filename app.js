@@ -7,7 +7,7 @@ const app = express()
 
 // --- ROUTES ----
 const index = require('./src/routes/index')
-const user = require('./src/routes/user')
+const shop = require('./src/routes/shop')
 const admin = require('./src/routes/admin')
 
 // view engine setup
@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use( '/', index )
 app.use( '/admin', admin )
-app.use( '/user', user )
+app.use( '/shop', shop )
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -45,7 +45,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500)
-  res.render('error')
+  res.render('error/error.pug')
 })
 
 module.exports = app
